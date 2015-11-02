@@ -6,16 +6,12 @@
 body {
   width: $original-width;
   height: $original-height;
-  // position: relative;
   background: url(../img/bg01.png) no-repeat;
-  // background-size: contain;
 
-  // display: block;
-  // margin: 0 auto;
   #stars {
     position: absolute;
-    top: 15%;
-    left: 5%;
+    top: 8em;
+    left: 1.5em;
     z-index: -1;
     @include animation-name(blink);
     @include animation-duration(150ms);
@@ -26,6 +22,7 @@ body {
 }
 
 #content {
+  height: calc(100% - 130px);
   #logo {
     text-align: center;
     padding-top: 70px;
@@ -110,34 +107,16 @@ body {
   100% { opacity: 1; }
 }
 
-@media (max-width: $iphone-width)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  body {
-    width: $iphone-width;
-    height: $iphone5-height;
-  }
-}
-
-@media (min-width: $iphone6-width)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  body {
-    width: $iphone6-width;
-    height: $iphone6-height;
-  }
-}
-
-@media (min-width: $iphone6plus-width)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-}
-
 @media (min-width: $iphone6-height)
   and (max-width: $iphone6-height)
   and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    width: 100%;
+    height: 100%;
+    background: url(../img/bg01.png) no-repeat center;
+    background-size: cover;
+  }
   #header {
     img {
       min-width: $iphone6-height;
@@ -149,6 +128,12 @@ body {
   and (max-width: $iphone6plus-height)
   and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    width: 100%;
+    height: 100%;
+    background: url(../img/bg01.png) no-repeat center;
+    background-size: cover;
+  }
   #header {
     img {
       min-width: $iphone6-height;
