@@ -6,7 +6,7 @@ var http = require('http');
 var st = require('st');
 
 gulp.task('compass', function() {
-  gulp.src(['sass/*.scss', '!sass/variables.scss', '!sass/function.scss'])
+  gulp.src(['sass/*.scss', '!sass/_*.scss'])
     .pipe(compass({
       css: 'css',
       sass: 'sass',
