@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import "compass/css3";
-@import "_variables";
 @import "_functions";
+@import "_variables";
 
 #lightbox {
   position: absolute;
@@ -18,47 +18,49 @@
 
 .popup {
   position: relative;
-  width: 536px;
-  height: 530px;
-  border-radius: 0.5rem;
-  border: 3px solid #2a5f0a;
+  width: getRem($baseline, 536px);
+  height: getRem($baseline, 530px);
+  border-radius: getRem($baseline, 20px);
+  border: getRem($baseline, 4px) solid #2a5f0a;
   background-color: #9ADD7B;
   display: flex;
   @include align-items(center);
   @include justify-content(center);
-
   @include animation(bounceIn 0.5s 1);
 
   #popup-closeBtn {
     display: inline-block;
-    width: 94px;
-    height: 94px;
+    width: getRem($baseline, 94px);
+    height: getRem($baseline, 94px);
     position: absolute;
-    right: 0.2rem;
-    top: 0.2rem;
+    right: getRem($baseline, 10px);
+    top: getRem($baseline, 10px);
     background: url(../img/close.png) no-repeat;
     background-size: contain;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
   }
+
   .popup-profile {
     text-align: center;
     display: block;
-    margin-bottom: 0.6rem;
+    margin-bottom: getRem($baseline, 36px);
     img {
-      margin-bottom: 0.2rem;
+      margin-bottom: getRem($baseline, 10px);
+      width: getRem($baseline, 106x);
+      height: getRem($baseline, 106px);
     }
     p {
-      font-size: 30px;
       color: #FFF;
+      font-size: getRem($baseline, 30px);
     }
   }
   .popup-text {
     width: 100%;
-    font-size: 24px;
+    font-size: getRem($baseline, 24px);
     color: #245a05;
-    line-height: 0.8rem;
-    padding: 0 0.4rem;
+    line-height: getRem($baseline, 42px);
+    padding: 0 getRem($baseline, 40px);;
     box-sizing: border-box;
   }
 }
@@ -70,184 +72,4 @@
 @include keyframes(bounceIn) {
   from { @include transform(scale(.2, .2)); }
   to { @include transform(scale(1, 1)); }
-}
-
-@media (max-width: $iphone-width)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  .popup {
-    width: getResponsiveSize(536px, ($iphone-width / $original-width));
-    height: getResponsiveSize(530px, ($iphone-width / $original-width));
-    #popup-closeBtn {
-      width: getResponsiveSize(94px, ($iphone-width / $original-width));
-      height: getResponsiveSize(94px, ($iphone-width / $original-width));
-    }
-    .popup-profile {
-      img {
-        width: getResponsiveSize(106px, ($iphone-width / $original-width));
-        height: getResponsiveSize(106px, ($iphone-width / $original-width));
-      }
-      p {
-        font-size: getResponsiveSize(30px, ($iphone-width / $original-width));
-      }
-    }
-    .popup-text {
-      font-size: getResponsiveSize(24px, ($iphone-width / $original-width));
-    }
-  }
-}
-
-@media (min-width: $iphone6-width)
-  and (max-width: $iphone6-width)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  .popup {
-    width: getResponsiveSize(536px, ($iphone6-width / $original-width));
-    height: getResponsiveSize(530px, ($iphone6-width / $original-width));
-    #popup-closeBtn {
-      width: getResponsiveSize(94px, ($iphone6-width / $original-width));
-      height: getResponsiveSize(94px, ($iphone6-width / $original-width));
-    }
-    .popup-profile {
-      img {
-        width: getResponsiveSize(106px, ($iphone6-width / $original-width));
-        height: getResponsiveSize(106px, ($iphone6-width / $original-width));
-      }
-      p {
-        font-size: getResponsiveSize(30px, ($iphone6-width / $original-width));
-      }
-    }
-    .popup-text {
-      font-size: getResponsiveSize(24px, ($iphone6-width / $original-width));
-    }
-  }
-}
-
-@media (min-width: $iphone6plus-width)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  .popup {
-    width: getResponsiveSize(536px, ($iphone6plus-width / $original-width));
-    height: getResponsiveSize(530px, ($iphone6plus-width / $original-width));
-    #popup-closeBtn {
-      width: getResponsiveSize(94px, ($iphone6plus-width / $original-width));
-      height: getResponsiveSize(94px, ($iphone6plus-width / $original-width));
-    }
-    .popup-profile {
-      img {
-        width: getResponsiveSize(106px, ($iphone6plus-width / $original-width));
-        height: getResponsiveSize(106px, ($iphone6plus-width / $original-width));
-      }
-      p {
-        font-size: getResponsiveSize(30px, ($iphone6plus-width / $original-width));
-      }
-    }
-    .popup-text {
-      font-size: getResponsiveSize(24px, ($iphone6plus-width / $original-width));
-    }
-  }
-}
-
-@media (min-width: $iphone4-height)
-  and (max-height: $iphone4-height)
-  and (orientation: landscape)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  .popup {
-    width: getResponsiveSize(536px, ($iphone4-height / $original-width));
-    height: getResponsiveSize(530px, ($iphone4-height / $original-width));
-    #popup-closeBtn {
-      width: getResponsiveSize(94px, ($iphone4-height / $original-width));
-      height: getResponsiveSize(94px, ($iphone4-height / $original-width));
-    }
-    .popup-profile {
-      img {
-        width: getResponsiveSize(106px, ($iphone4-height / $original-width));
-        height: getResponsiveSize(106px, ($iphone4-height / $original-width));
-      }
-      p {
-        font-size: getResponsiveSize(30px, ($iphone4-height / $original-width));
-      }
-    }
-    .popup-text {
-      font-size: getResponsiveSize(24px, ($iphone4-height / $original-width));
-    }
-  }
-}
-
-@media (min-width: $iphone5-height)
-  and (max-height: $iphone5-height)
-  and (orientation: landscape)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  .popup {
-    width: getResponsiveSize(536px, ($iphone5-height / $original-width));
-    height: getResponsiveSize(530px, ($iphone5-height / $original-width));
-    #popup-closeBtn {
-      width: getResponsiveSize(94px, ($iphone5-height / $original-width));
-      height: getResponsiveSize(94px, ($iphone5-height / $original-width));
-    }
-    .popup-profile {
-      img {
-        width: getResponsiveSize(106px, ($iphone5-height / $original-width));
-        height: getResponsiveSize(106px, ($iphone5-height / $original-width));
-      }
-      p {
-        font-size: getResponsiveSize(30px, ($iphone5-height / $original-width));
-      }
-    }
-    .popup-text {
-      font-size: getResponsiveSize(24px, ($iphone5-height / $original-width));
-    }
-  }
-}
-
-@media (min-width: $iphone6-height)
-  and (max-width: $iphone6-height)
-  and (orientation: landscape)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  .popup {
-    width: getResponsiveSize(536px, ($iphone6-height / $original-width));
-    height: getResponsiveSize(530px, ($iphone6-height / $original-width));
-    #popup-closeBtn {
-      width: getResponsiveSize(94px, ($iphone6-height / $original-width));
-      height: getResponsiveSize(94px, ($iphone6-height / $original-width));
-    }
-    .popup-profile {
-      img {
-        width: getResponsiveSize(106px, ($iphone6-height / $original-width));
-        height: getResponsiveSize(106px, ($iphone6-height / $original-width));
-      }
-      p {
-        font-size: getResponsiveSize(30px, ($iphone6-height / $original-width));
-      }
-    }
-    .popup-text {
-      font-size: getResponsiveSize(24px, ($iphone6-height / $original-width));
-    }
-  }
-}
-
-@media (min-width: $iphone6plus-height)
-  and (max-width: $iphone6plus-height)
-  and (orientation: landscape)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  .popup {
-    width: getResponsiveSize(536px, ($iphone6plus-height / $original-width));
-    height: getResponsiveSize(530px, ($iphone6plus-height / $original-width));
-    #popup-closeBtn {
-      width: getResponsiveSize(94px, ($iphone6plus-height / $original-width));
-      height: getResponsiveSize(94px, ($iphone6plus-height / $original-width));
-    }
-    .popup-profile {
-      img {
-        width: getResponsiveSize(106px, ($iphone6plus-height / $original-width));
-        height: getResponsiveSize(106px, ($iphone6plus-height / $original-width));
-      }
-      p {
-        font-size: getResponsiveSize(30px, ($iphone6plus-height / $original-width));
-      }
-    }
-    .popup-text {
-      font-size: getResponsiveSize(24px, ($iphone6plus-height / $original-width));
-    }
-  }
 }

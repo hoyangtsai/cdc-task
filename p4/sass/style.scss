@@ -1,15 +1,15 @@
 @charset "UTF-8";
 @import "compass/reset";
-@import "_variables";
 @import "_functions";
+@import "_variables";
 
 #container {
   display: block;
   margin: 0 auto;
-  width: $original-width;
+  width: getRem($baseline, $original-width);
   height: auto;
   background: #8AD160 url(../img/title.png) no-repeat center top;
-  background-position-y: -0.6rem;
+  background-position-y: getRem($baseline, -40px);
   background-size: contain;
 }
 
@@ -20,7 +20,7 @@
 #content-title {
   display: block;
   width: 100%;
-  height: 420px;
+  height: getRem($baseline, 420px);
 }
 
 .img-responsive {
@@ -31,21 +31,23 @@
 }
 
 .comment-section {
-  padding-bottom: 0.2rem;
+  padding-bottom: getRem($baseline, 50px);
 }
 
 .profile {
   display: block;
-  height: 106px;
-  line-height: 106px;
-  padding-left: 40px;
+  height: getRem($baseline, 106px);
+  line-height: getRem($baseline, 106px);
+  padding-left: getRem($baseline, 40px);
   .profile-photo {
     vertical-align: middle;
+    width: getRem($baseline, 106px);
+    height: getRem($baseline, 106px);
   }
   .profile-name {
     color: #fff;
-    line-height: 106px;
-    font-size: 30px;
+    line-height: getRem($baseline, 106px);
+    font-size: getRem($baseline, 30px);
   }
 }
 
@@ -54,266 +56,19 @@
   p {
     display: inline-block;
     color: #245a05;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 1.8em;
-    height: 140px;
-    padding: 0.5em 1.5em;
+    font-weight: 500;
+    font-size: getRem($baseline, 24px);
+    line-height: getRem($baseline, 40px);
+    height: getRem($baseline, 140px);
+    padding: getRem($baseline, 10px) getRem($baseline, 40px) 0;
   }
   .more-btn {
     display: inline-block;
     position: absolute;
-    right: 50px;
+    right: getRem($baseline, 50px);
     bottom: 0;
     cursor: pointer;
-  }
-}
-
-@media (max-width: $iphone-width)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  #container {
-    width: $iphone-width;
-  }
-  #content-title {
-    height: getResponsiveSize(420px, ($iphone-width / $original-width));
-  }
-  .profile {
-    height: getResponsiveSize(106px, ($iphone-width / $original-width));
-    line-height: getResponsiveSize(106px, ($iphone-width / $original-width));
-    padding-left: getResponsiveSize(40px, ($iphone-width / $original-width));
-    .profile-photo {
-      width: getResponsiveSize(106px, ($iphone-width / $original-width));
-      height: getResponsiveSize(106px, ($iphone-width / $original-width));
-    }
-    .profile-name {
-      line-height: getResponsiveSize(106px, ($iphone-width / $original-width));
-      font-size: getResponsiveSize(30px, ($iphone-width / $original-width));
-    }
-  }
-  .message {
-    p {
-      font-size: getResponsiveSize(24px, ($iphone-width / $original-width));
-      height: getResponsiveSize(140px, ($iphone-width / $original-width));
-    }
-    .more-btn {
-      width: getResponsiveSize(171px, ($iphone-width / $original-width));
-      height: getResponsiveSize(55px, ($iphone-width / $original-width));
-      right: getResponsiveSize(50px, ($iphone-width / $original-width));
-    }
-  }
-}
-
-@media (min-width: $iphone6-width)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  #container {
-    width: $iphone6-width;
-  }
-  #content-title {
-    height: getResponsiveSize(420px, ($iphone6-width / $original-width));
-  }
-  .profile {
-    height: getResponsiveSize(106px, ($iphone6-width / $original-width));
-    line-height: getResponsiveSize(106px, ($iphone6-width / $original-width));
-    padding-left: getResponsiveSize(40px, ($iphone6-width / $original-width));
-    .profile-photo {
-      width: getResponsiveSize(106px, ($iphone6-width / $original-width));
-      height: getResponsiveSize(106px, ($iphone6-width / $original-width));
-    }
-    .profile-name {
-      line-height: getResponsiveSize(106px, ($iphone6-width / $original-width));
-      font-size: getResponsiveSize(30px, ($iphone6-width / $original-width));
-    }
-  }
-  .message {
-    p {
-      font-size: getResponsiveSize(24px, ($iphone6-width / $original-width));
-      height: getResponsiveSize(140px, ($iphone6-width / $original-width));
-    }
-    .more-btn {
-      width: getResponsiveSize(171px, ($iphone6-width / $original-width));
-      height: getResponsiveSize(55px, ($iphone6-width / $original-width));
-      right: getResponsiveSize(50px, ($iphone6-width / $original-width));
-    }
-  }
-}
-
-@media (min-width: $iphone6plus-width)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  #container {
-    width: $iphone6plus-width;
-  }
-  #content-title {
-    height: getResponsiveSize(420px, ($iphone6plus-width / $original-width));
-  }
-  .profile {
-    height: getResponsiveSize(106px, ($iphone6plus-width / $original-width));
-    line-height: getResponsiveSize(106px, ($iphone6plus-width / $original-width));
-    padding-left: getResponsiveSize(40px, ($iphone6plus-width / $original-width));
-    .profile-photo {
-      width: getResponsiveSize(106px, ($iphone6plus-width / $original-width));
-      height: getResponsiveSize(106px, ($iphone6plus-width / $original-width));
-    }
-    .profile-name {
-      line-height: getResponsiveSize(106px, ($iphone6plus-width / $original-width));
-      font-size: getResponsiveSize(30px, ($iphone6plus-width / $original-width));
-    }
-  }
-  .message {
-    p {
-      font-size: getResponsiveSize(24px, ($iphone6plus-width / $original-width));
-      height: getResponsiveSize(140px, ($iphone6plus-width / $original-width));
-    }
-    .more-btn {
-      width: getResponsiveSize(171px, ($iphone6plus-width / $original-width));
-      height: getResponsiveSize(55px, ($iphone6plus-width / $original-width));
-      right: getResponsiveSize(50px, ($iphone6plus-width / $original-width));
-    }
-  }
-}
-
-@media (min-width: $iphone4-height)
-  and (max-height: $iphone4-height)
-  and (orientation: landscape)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  #container {
-    width: $iphone4-height;
-  }
-  #content-title {
-    height: getResponsiveSize(420px, ($iphone4-height / $original-width));
-  }
-  .profile {
-    height: getResponsiveSize(106px, ($iphone4-height / $original-width));
-    line-height: getResponsiveSize(106px, ($iphone4-height / $original-width));
-    padding-left: getResponsiveSize(40px, ($iphone4-height / $original-width));
-    .profile-photo {
-      width: getResponsiveSize(106px, ($iphone4-height / $original-width));
-      height: getResponsiveSize(106px, ($iphone4-height / $original-width));
-    }
-    .profile-name {
-      line-height: getResponsiveSize(106px, ($iphone4-height / $original-width));
-      font-size: getResponsiveSize(30px, ($iphone4-height / $original-width));
-    }
-  }
-  .message {
-    p {
-      font-size: getResponsiveSize(24px, ($iphone4-height / $original-width));
-      height: getResponsiveSize(140px, ($iphone4-height / $original-width));
-    }
-    .more-btn {
-      width: getResponsiveSize(171px, ($iphone4-height / $original-width));
-      height: getResponsiveSize(55px, ($iphone4-height / $original-width));
-      right: getResponsiveSize(50px, ($iphone4-height / $original-width));
-    }
-  }
-}
-
-@media (min-width: $iphone5-height)
-  and (max-height: $iphone5-height)
-  and (orientation: landscape)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  #container {
-    width: $iphone5-height;
-  }
-  #content-title {
-    height: getResponsiveSize(420px, ($iphone5-height / $original-width));
-  }
-  .profile {
-    height: getResponsiveSize(106px, ($iphone5-height / $original-width));
-    line-height: getResponsiveSize(106px, ($iphone5-height / $original-width));
-    padding-left: getResponsiveSize(40px, ($iphone5-height / $original-width));
-    .profile-photo {
-      width: getResponsiveSize(106px, ($iphone5-height / $original-width));
-      height: getResponsiveSize(106px, ($iphone5-height / $original-width));
-    }
-    .profile-name {
-      line-height: getResponsiveSize(106px, ($iphone5-height / $original-width));
-      font-size: getResponsiveSize(30px, ($iphone5-height / $original-width));
-    }
-  }
-  .message {
-    p {
-      font-size: getResponsiveSize(24px, ($iphone5-height / $original-width));
-      height: getResponsiveSize(140px, ($iphone5-height / $original-width));
-    }
-    .more-btn {
-      width: getResponsiveSize(171px, ($iphone5-height / $original-width));
-      height: getResponsiveSize(55px, ($iphone5-height / $original-width));
-      right: getResponsiveSize(50px, ($iphone5-height / $original-width));
-    }
-  }
-}
-
-@media (min-width: $iphone6-height)
-  and (max-width: $iphone6-height)
-  and (orientation: landscape)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  #container {
-    width: $iphone6-height;
-  }
-  #content-title {
-    height: getResponsiveSize(420px, ($iphone6-height / $original-width));
-  }
-  .profile {
-    height: getResponsiveSize(106px, ($iphone6-height / $original-width));
-    line-height: getResponsiveSize(106px, ($iphone6-height / $original-width));
-    padding-left: getResponsiveSize(40px, ($iphone6-height / $original-width));
-    .profile-photo {
-      width: getResponsiveSize(106px, ($iphone6-height / $original-width));
-      height: getResponsiveSize(106px, ($iphone6-height / $original-width));
-    }
-    .profile-name {
-      line-height: getResponsiveSize(106px, ($iphone6-height / $original-width));
-      font-size: getResponsiveSize(30px, ($iphone6-height / $original-width));
-    }
-  }
-  .message {
-    p {
-      font-size: getResponsiveSize(24px, ($iphone6-height / $original-width));
-      height: getResponsiveSize(140px, ($iphone6-height / $original-width));
-    }
-    .more-btn {
-      width: getResponsiveSize(171px, ($iphone6-height / $original-width));
-      height: getResponsiveSize(55px, ($iphone6-height / $original-width));
-      right: getResponsiveSize(50px, ($iphone6-height / $original-width));
-    }
-  }
-}
-
-@media (min-width: $iphone6plus-height)
-  and (max-width: $iphone6plus-height)
-  and (orientation: landscape)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  #container {
-    width: $iphone6plus-height;
-  }
-  #content-title {
-    height: getResponsiveSize(420px, ($iphone6plus-height / $original-width));
-  }
-  .profile {
-    height: getResponsiveSize(106px, ($iphone6plus-height / $original-width));
-    line-height: getResponsiveSize(106px, ($iphone6plus-height / $original-width));
-    padding-left: getResponsiveSize(40px, ($iphone6plus-height / $original-width));
-    .profile-photo {
-      width: getResponsiveSize(106px, ($iphone6plus-height / $original-width));
-      height: getResponsiveSize(106px, ($iphone6plus-height / $original-width));
-    }
-    .profile-name {
-      line-height: getResponsiveSize(106px, ($iphone6plus-height / $original-width));
-      font-size: getResponsiveSize(30px, ($iphone6plus-height / $original-width));
-    }
-  }
-  .message {
-    p {
-      font-size: getResponsiveSize(24px, ($iphone6plus-height / $original-width));
-      height: getResponsiveSize(140px, ($iphone6plus-height / $original-width));
-    }
-    .more-btn {
-      width: getResponsiveSize(171px, ($iphone6plus-height / $original-width));
-      height: getResponsiveSize(55px, ($iphone6plus-height / $original-width));
-      right: getResponsiveSize(50px, ($iphone6plus-height / $original-width));
-    }
+    width: getRem($baseline, 171px);
+    height: getRem($baseline, 55px);
   }
 }
