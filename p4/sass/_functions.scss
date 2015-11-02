@@ -1,3 +1,15 @@
-@function getResponsiveSize($size, $ratio) {
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function getReSize($size, $ratio) {
   @return ($size * $ratio)
+}
+
+@function getRem($baseline, $px) {
+  $result: strip-unit($px) / strip-unit($baseline);
+  @return $result + rem;
 }

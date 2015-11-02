@@ -4,65 +4,6 @@
 @import "_variables";
 @import "_functions";
 
-html {
-  font-size: $baseline;
-}
-@media (max-width: $iphone-width)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  html {
-    font-size: getReSize($baseline, $iphone-width / $original-width);
-  }
-}
-@media (min-width: $iphone6-width)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  html {
-    font-size: getReSize($baseline, $iphone6-width / $original-width);
-  }
-}
-@media (min-width: $iphone6plus-width)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  html {
-    font-size: getReSize($baseline, $iphone6plus-width / $original-width);
-  }
-}
-
-@media (min-width: $iphone4-height)
-  and (max-height: $iphone4-height)
-  and (orientation: landscape)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  html {
-    font-size: getReSize($baseline, $iphone4-height / $original-width);
-  }
-}
-@media (min-width: $iphone5-height)
-  and (max-height: $iphone5-height)
-  and (orientation: landscape)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  html {
-    font-size: getReSize($baseline, $iphone5-height / $original-width);
-  }
-}
-@media (min-width: $iphone6-height)
-  and (max-width: $iphone6-height)
-  and (orientation: landscape)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  html {
-    font-size: getReSize($baseline, $iphone6-height / $original-width);
-  }
-}
-@media (min-width: $iphone6plus-height)
-  and (max-width: $iphone6plus-height)
-  and (orientation: landscape)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  html {
-    font-size: getReSize($baseline, $iphone6plus-height / $original-width);
-  }
-}
-
-
 #container {
   width: getRem($baseline, $original-width);
   height: getRem($baseline, $original-height);
@@ -113,6 +54,7 @@ html {
     bottom: 0;
     @include animation(shadow 150ms linear infinite alternate);
   }
+
   #left {
     left: getRem($baseline, 30px);
     bottom: getRem($baseline, 300px);
@@ -121,6 +63,7 @@ html {
       height: getRem($baseline, 176px);
     }
   }
+
   #middle {
     left: getRem($baseline, 30px);
     bottom: getRem($baseline, 126px);
@@ -142,6 +85,7 @@ html {
       @include animation(blink 150ms linear infinite alternate);
     }
   }
+
   #right {
     bottom: getRem($baseline, 300px);
     .penguins {
