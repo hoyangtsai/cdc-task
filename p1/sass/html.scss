@@ -1,0 +1,91 @@
+@charset "UTF-8";
+@import "_variables";
+@import "_functions";
+
+html {
+  font-size: $baseline;
+}
+
+/*** General ***/
+@media (max-width: ($general-md - 1px)) {
+  html {
+    font-size: getReSize($baseline, ($general-md - 1px) / $original-width);
+  }
+}
+@media (max-width: $general-sm) {
+  html {
+    font-size: getReSize($baseline, $general-sm / $original-width);
+  }
+}
+@media (min-width: $general-md) and (max-width: ($general-lg - 1px)) {
+  html {
+    font-size: getReSize($baseline, $general-md / $original-width);
+  }
+}
+@media (min-width: $general-lg) {
+  html {
+    font-size: getReSize($baseline, $general-lg / $original-width);
+  }
+}
+@media (min-width: $general-xl) {
+  html {
+    font-size: getReSize($baseline, $general-xl / $original-width);
+  }
+}
+
+/*** iPhone portrait ***/
+@media (max-width: $iphone-width)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    font-size: getReSize($baseline, $iphone-width / $original-width);
+  }
+}
+@media (min-width: $iphone6-width)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    font-size: getReSize($baseline, $iphone6-width / $original-width);
+  }
+}
+@media (min-width: $iphone6plus-width)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    font-size: getReSize($baseline, $iphone6plus-width / $original-width);
+  }
+}
+
+/*** iPhone landscape ***/
+@media (min-width: $iphone4-height)
+  and (max-height: $iphone4-height)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    font-size: getReSize($baseline, $iphone4-height / $original-width);
+  }
+}
+@media (min-width: $iphone5-height)
+  and (max-height: $iphone5-height)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    font-size: getReSize($baseline, $iphone5-height / $original-width);
+  }
+}
+@media (min-width: $iphone6-height)
+  and (max-width: $iphone6-height)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    font-size: getReSize($baseline, $iphone6-height / $original-width);
+  }
+}
+@media (min-width: $iphone6plus-height)
+  and (max-width: $iphone6plus-height)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    font-size: getReSize($baseline, $iphone6plus-height / $original-width);
+  }
+}
