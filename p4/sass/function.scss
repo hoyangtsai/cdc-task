@@ -1,0 +1,3 @@
+@function getResponsiveSize($size, $ratio) {
+  @return ($size * $ratio)
+}

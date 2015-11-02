@@ -1,0 +1,157 @@
+@charset "UTF-8";
+@import "compass/reset";
+@import "compass/css3";
+@import "variables";
+
+body {
+  width: $original-width;
+  height: $original-height;
+  // position: relative;
+  background: url(../img/bg01.png) no-repeat;
+  // background-size: contain;
+
+  // display: block;
+  // margin: 0 auto;
+  #stars {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    z-index: -1;
+    @include animation-name(blink);
+    @include animation-duration(150ms);
+    @include animation-timing-function(linear);
+    @include animation-direction(alternate);
+    @include animation-iteration-count(infinite);
+  }
+}
+
+#content {
+  #logo {
+    text-align: center;
+    padding-top: 70px;
+  }
+  #animal {
+    div {
+      display: inline-block;
+      position: relative;
+      img.penguins {
+        position: relative;
+        @include animation-name(jumping);
+        @include animation-duration(150ms);
+        @include animation-timing-function(linear);
+        @include animation-direction(alternate);
+        @include animation-iteration-count(infinite);
+      }
+      img.shadow {
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+        @include animation-name(shadow);
+        @include animation-duration(150ms);
+        @include animation-timing-function(linear);
+        @include animation-direction(alternate);
+        @include animation-iteration-count(infinite);
+      }
+    }
+    #left {
+      left: 60px;
+      top: -75px;
+      img.shadow {
+        left: 5px;
+      }
+    }
+    #middle {
+      left: 40px;
+      top: 105px;
+      img {
+        &:first-child {
+          position: absolute;
+          left: 0px;
+          top: -25px;
+          @include animation-name(blink);
+          @include animation-duration(150ms);
+          @include animation-timing-function(linear);
+          @include animation-direction(alternate);
+          @include animation-iteration-count(infinite);
+        }
+        &:last-child {
+          left: 115px;
+        }
+      }
+    }
+    #right {
+      right: 0px;
+      top: -70px;
+      img.shadow {
+        left: 45px;
+      }
+    }
+  }
+}
+
+@include keyframes(jumping) {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -25px;
+  }
+}
+@include keyframes(shadow) {
+  from {
+    width: auto;
+  }
+  to {
+    width: 35%;
+  }
+}
+@include keyframes(blink) {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: $iphone-width)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    width: $iphone-width;
+    height: $iphone5-height;
+  }
+}
+
+@media (min-width: $iphone6-width)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    width: $iphone6-width;
+    height: $iphone6-height;
+  }
+}
+
+@media (min-width: $iphone6plus-width)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+@media (min-width: $iphone6-height)
+  and (max-width: $iphone6-height)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  #header {
+    img {
+      min-width: $iphone6-height;
+    }
+  }
+}
+
+@media (min-width: $iphone6plus-height)
+  and (max-width: $iphone6plus-height)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  #header {
+    img {
+      min-width: $iphone6-height;
+    }
+  }
+}
