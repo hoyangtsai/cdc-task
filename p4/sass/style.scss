@@ -7,9 +7,9 @@
   display: block;
   margin: 0 auto;
   width: getRem($baseline, $original-width);
-  height: auto;
+  height: getRem($baseline, $original-height);
   background: #8AD160 url(../img/title.png) no-repeat center top;
-  background-position-y: getRem($baseline, -40px);
+  background-position-y: getRem($baseline, 60px);
   background-size: contain;
 }
 
@@ -20,7 +20,7 @@
 #content-title {
   display: block;
   width: 100%;
-  height: getRem($baseline, 420px);
+  height: getRem($baseline, 526px);
 }
 
 .img-responsive {
@@ -28,10 +28,6 @@
   height: auto;
   display: block;
   margin: 0 auto;
-}
-
-.comment-section {
-  padding-bottom: getRem($baseline, 50px);
 }
 
 .profile {
