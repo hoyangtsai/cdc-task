@@ -1,15 +1,15 @@
 @charset "UTF-8";
 @import "compass/reset";
-@import "variables";
-@import "function";
+@import "_variables";
+@import "_functions";
 
 #container {
   display: block;
   margin: 0 auto;
   width: $original-width;
   height: auto;
-  background: #8AD160 url(../img/title.png) no-repeat center;
-  background-position-y: 25%;
+  background: #8AD160 url(../img/title.png) no-repeat center top;
+  background-position-y: -0.6rem;
   background-size: contain;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .comment-section {
-  padding-bottom: 2em;
+  padding-bottom: 0.2rem;
 }
 
 .profile {
@@ -60,7 +60,6 @@
     height: 140px;
     padding: 0.5em 1.5em;
   }
-
   .more-btn {
     display: inline-block;
     position: absolute;
@@ -254,9 +253,6 @@
   #container {
     width: $iphone6-height;
   }
-  #header-bar {
-    min-width: $iphone6-height;
-  }
   #content-title {
     height: getResponsiveSize(420px, ($iphone6-height / $original-width));
   }
@@ -292,9 +288,6 @@
   and (-webkit-min-device-pixel-ratio: 2) {
   #container {
     width: $iphone6plus-height;
-  }
-  #header-bar {
-    min-width: $iphone6plus-height;
   }
   #content-title {
     height: getResponsiveSize(420px, ($iphone6plus-height / $original-width));
